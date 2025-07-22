@@ -11,47 +11,16 @@ function est_Notas(){
         if(notas[i] < 0 || notas [i] > 20){
             console.log(`ERROR : La nota ${i} no es valida`)
         } 
-        else{
+        else if (i === 0){
             n_suma += notas[i]
-
-            switch(notas[i]){
-                case notas[0]:
-                    if(notas[0] > notas[1] && notas[0] > notas[2] && notas[0] > notas [3]){
-                        n_mayor = notas [0]
-                    } 
-                    else if (notas[0] < notas[1] && notas[0] < notas[2] && notas[0] < notas [3]){
-                        n_menor = notas[0]
-                    }
-                break
-
-                case notas[1]:
-                    if(notas[1] > notas[0] && notas[1] > notas[2] && notas[1] > notas [3]){
-                        n_mayor = notas [1]
-                    } 
-                    else if (notas[1] < notas[0] && notas[1] < notas[2] && notas[1] < notas [3]){
-                        n_menor = notas[1]
-                    }
-                break
-
-                case notas[2]:
-                    if(notas[2] > notas[0] && notas[2] > notas[1] && notas[2] > notas [3]){
-                        n_mayor = notas [2]
-                    } 
-                    else if (notas[2] < notas[0] && notas[2] < notas[1] && notas[2] < notas [3]){
-                        n_menor = notas[2]
-                    }
-                break
-
-                case notas[3]:
-                    if(notas[3] > notas[0] && notas[3] > notas[1] && notas[3] > notas [2]){
-                        n_mayor = notas [3]
-                    } 
-                    else if (notas[3] < notas[0] && notas[3] < notas[1] && notas[3] < notas [2]){
-                        n_menor = notas[0]
-                    }
-                break
-
-            }
+            //Asignamos el primer valor del array a las variables que necesitamos comparar para las proximas iteraciones
+            n_mayor = notas[i]
+            n_menor = notas[i]
+        }
+        else {
+            n_suma += notas[i]
+            if(notas[i] > n_mayor) n_mayor = notas[i]
+            if(notas[i] < n_menor) n_menor = notas [i]
         }
     }
 
