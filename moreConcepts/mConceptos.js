@@ -32,3 +32,7 @@ console.log(persona['nombre'])
 for(nombrePropiedad in auto){
     console.log('Valor dentro de propiedad ' + nombrePropiedad + ' : ' + auto[nombrePropiedad])
 }
+
+//Eliminar una propiedad del objeto
+delete auto.anio
+console.log(auto)
